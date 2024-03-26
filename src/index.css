@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.campoVazio{
+    color: red;
+    font-size: 16px;
+    margin: 0;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.success{
+    display: flex;
+    position:absolute;
+    left: 0;
+    top: 0;
+    background-color: #94ffaf;
+    color: #006419;
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #006419;
+    max-width: 300px;
+}
+.error{
+    display: flex;
+    position:absolute;
+    left: 0;
+    top: 0;
+    background-color: #ff9494;
+    color: #ff0000;
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #fc3c3c;
+    max-width: 300px;
 }

@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+input{
+    padding: 5px;
+    margin-right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    outline: none;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button{
+    background-color: #0072f5;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    outline: none;
+    margin: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+    
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.lista{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    border: 1px solid #000;
+    width: 400px;
+    padding: 0px 20px 0px 20px;
+    margin-top: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+.lista div{
+    display: flex;
 }
+.lista p{
+    padding: 5px;
+    font-weight: bold;
+    margin-left: 10px;
+    border-radius: 5px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.excluir{
+    background-color: #fc5555;
+    color: #fff;
+}
+.editar{
+    background-color: #369c32;
+    color: #fff;
+}
+.lista p:hover{
+    opacity: 0.7;
+    cursor: pointer;
 }

@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Minha Aplicação CRUD em ReactTS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bem-vindo ao repositório da minha aplicação CRUD desenvolvida em ReactJS! Esta aplicação foi criada para demonstrar minhas habilidades em React e o uso de tecnologias modernas para criar uma experiência web dinâmica.
 
-## Available Scripts
+## Sobre o Projeto
 
-In the project directory, you can run:
+Este projeto é uma ferramenta web que permite realizar operações básicas de criação, leitura, atualização e exclusão (CRUD) de dados. Com ela, você pode adicionar novos itens, visualizar informações existentes, editar detalhes e excluir registros, tudo de forma intuitiva e responsiva.
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Adicionar novos itens
+- Visualizar detalhes dos itens
+- Editar informações dos itens
+- Excluir itens
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologias Utilizadas
 
-### `npm test`
+- React: Biblioteca JavaScript para construir interfaces de usuário
+- Axios: Cliente HTTP para fazer requisições ao servidor
+- Tanstack Query: Biblioteca para gerenciamento de estados em aplicações React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estrutura do Projeto
 
-### `npm run build`
+O projeto está organizado da seguinte forma:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `src/components/`: Componentes da aplicação, incluindo o "Card", "Form", "Header", "Loading" e o "Update".
+- `src/page/`: Componentes da aplicação, incluindo a "Home.
+- `src/utils/`: Utilitários e arquivos de configuração, como a API, Mutations, Query e o ProviderQuery.
+- `src/`: App.js o index.js e o arquivo Router.js, e os CSS App.css e index.css
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Como Executar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone este repositório.
+2. Instale as dependências utilizando o comando `npm install`.
+3. Inicie a aplicação com `npm start`.
+4. Acesse a aplicação em seu navegador no endereço `http://localhost:3000`.
 
-### `npm run eject`
+## Instalação do JSON Server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Primeiro, você precisa instalar o JSON Server.
+Isso pode ser feito usando o npm (Node Package Manager), que geralmente é instalado junto com o Node.js. Abra o terminal e execute o seguinte comando:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Copy code
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`npm install json-server -D`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+O -D ira instalar apenas em ambiente de desenvolvimento.
+Este comando instalará o JSON Server globalmente em sua máquina para que você possa usá-lo em qualquer projeto ReactJS.
 
-## Learn More
+## Criando um arquivo JSON com seus dados:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Agora, você precisa criar um arquivo JSON que servirá como seu banco de dados simulado. Este arquivo conterá os dados que você deseja acessar e manipular em seu aplicativo ReactJS. Por exemplo, você pode criar um arquivo chamado db.json e adicionar alguns dados a ele:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### json
 
-### Code Splitting
+Copy code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`{`
+  `"posts": [`
+    `{ "id": 1, "title": "Hello World", "body": "This is my first post!" },`
+   ` { "id": 2, "title": "React is awesome", "body": "I love working with React!" }`
+  `]`
+`}`
 
-### Analyzing the Bundle Size
+Salve este arquivo na raiz do seu projeto ReactJS.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Iniciando o servidor JSON:
 
-### Making a Progressive Web App
+3. Agora que você tem seu arquivo JSON pronto, você pode iniciar o JSON Server. Abra o terminal na pasta onde está localizado o seu arquivo db.json e execute o seguinte comando:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Copy code
 
-### Advanced Configuration
+`json-server --watch db.json --port 3001`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Isso iniciará o servidor JSON e disponibilizará seus dados em uma API RESTful em http://localhost:3001. O parâmetro --watch observa qualquer alteração no arquivo db.json e atualiza automaticamente os dados do servidor.
 
-### Deployment
+## Acessando os dados no seu aplicativo ReactJS:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. Agora que o servidor JSON está em execução, você pode acessar os dados em seu aplicativo ReactJS usando solicitações HTTP. Por exemplo, você pode usar a biblioteca Axios para fazer solicitações GET, POST, PUT e DELETE para o servidor JSON e manipular os dados conforme necessário em seu aplicativo ReactJS.
 
-### `npm run build` fails to minify
+Por exemplo, para fazer uma solicitação GET para obter todos os posts, você pode fazer algo assim em seu componente React:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### javascript
+
+Copy code
+
+`import axios from 'axios';`
+
+`axios.get('http://localhost:3001/posts')`
+  `.then(response => {`
+    `console.log(response.data); // Aqui você terá acesso aos dados dos posts`
+  `})`
+  `.catch(error => {`
+    `console.error('Error fetching posts:', error);`
+  `});`
+
+### Lembre-se de substituir http://localhost:3001 pelo URL do seu servidor JSON, se for diferente.
+
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue se encontrar algum problema ou para enviar um pull request com melhorias.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
