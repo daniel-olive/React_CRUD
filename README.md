@@ -1,4 +1,4 @@
-# Minha Aplicação CRUD em ReactTS
+# Minha Aplicação CRUD em ReactJS
 
 Bem-vindo ao repositório da minha aplicação CRUD desenvolvida em ReactJS! Esta aplicação foi criada para demonstrar minhas habilidades em React e o uso de tecnologias modernas para criar uma experiência web dinâmica.
 
@@ -45,7 +45,7 @@ Copy code
 `npm install json-server -D`
 
 O -D ira instalar apenas em ambiente de desenvolvimento.
-Este comando instalará o JSON Server globalmente em sua máquina para que você possa usá-lo em qualquer projeto ReactJS.
+Este comando instalará o JSON Server em seu projeto ReactJS.
 
 ## Criando um arquivo JSON com seus dados:
 
@@ -55,12 +55,18 @@ Este comando instalará o JSON Server globalmente em sua máquina para que você
 
 Copy code
 
-`{`
-  `"posts": [`
-    `{ "id": 1, "title": "Hello World", "body": "This is my first post!" },`
-   ` { "id": 2, "title": "React is awesome", "body": "I love working with React!" }`
-  `]`
-`}`
+````
+```
+
+{
+  "posts": [
+    { "id": 1, "title": "Hello World", "body": "This is my first post!" },
+    { "id": 2, "title": "React is awesome", "body": "I love working with React!" }
+  ]
+}
+
+```
+````
 
 Salve este arquivo na raiz do seu projeto ReactJS.
 
@@ -84,15 +90,21 @@ Por exemplo, para fazer uma solicitação GET para obter todos os posts, você p
 
 Copy code
 
-`import axios from 'axios';`
+````
+```
 
-`axios.get('http://localhost:3001/posts')`
-  `.then(response => {`
-    `console.log(response.data); // Aqui você terá acesso aos dados dos posts`
-  `})`
-  `.catch(error => {`
-    `console.error('Error fetching posts:', error);`
-  `});`
+import axios from 'axios';
+
+axios.get('http://localhost:3001/posts')
+  .then(response => {
+    console.log(response.data); // Aqui você terá acesso aos dados dos posts
+  })
+  .catch(error => {
+    console.error('Error fetching posts:', error);
+  });
+
+```
+````
 
 ### Lembre-se de substituir http://localhost:3001 pelo URL do seu servidor JSON, se for diferente.
 
