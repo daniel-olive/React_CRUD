@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { catalogoGET } from "./api";
+import { listaGET } from "./api";
 
-export const useCatalogo = () => {
+export const useLista = () => {
     const query = useQuery({
-        queryKey: ["catalogo"],
-        queryFn: () => catalogoGET()
+        queryKey: ["lista"],
+        queryFn: () => listaGET()
     });
     return query
 };

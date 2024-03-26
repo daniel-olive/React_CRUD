@@ -13,7 +13,7 @@ export const Card = ({ item, OnDelete }) => {
                 <h3>{item.nome}</h3>
                 <div>
                     <p onClick={handleDelete} className='excluir'>Delete</p>
-                    <p onClick={() => navigate(`/updateCatalogo/${item.id}`)} className='editar'>Editar</p>
+                    <p onClick={() => navigate(`/updateLista/${item.id}`)} className='editar'>Editar</p>
                 </div>
             </div>
         </>

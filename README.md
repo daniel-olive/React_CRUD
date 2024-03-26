@@ -18,6 +18,7 @@ Este projeto é uma ferramenta web que permite realizar operações básicas de 
 - React: Biblioteca JavaScript para construir interfaces de usuário
 - Axios: Cliente HTTP para fazer requisições ao servidor
 - Tanstack Query: Biblioteca para gerenciamento de estados em aplicações React
+- React Hook Form: É uma lib de gerenciamento de formulários que controla os dados dos componentes utilizando o conceito de REF de forma que não depende do estado do componente.
 
 ## Estrutura do Projeto
 

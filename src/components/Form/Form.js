@@ -8,7 +8,7 @@ export const Form = ({ onAction }) => {
     const { id } = useParams();
 
     const getDataUpdate = async () => {
-        const response = await axios.get(`http://localhost:5003/catalogos/${id}`)
+        const response = await axios.get(`http://localhost:5003/listas/${id}`)
         reset(response.data)
     }
 

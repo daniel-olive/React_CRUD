@@ -1,13 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { catalogoDelete, catalogosAdd, catalogosUpdate } from "./api";
+import { listaDelete, listasAdd, listasUpdate } from "./api";
 
 export const useAddMutation = () => {
     const queryClient = useQueryClient();
     const mutate = useMutation({
-        mutationFn: catalogosAdd,
+        mutationFn: listasAdd,
         onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: ['catalogo']
+                queryKey: ['lista']
             })
         }
     })
@@ -17,10 +17,10 @@ export const useAddMutation = () => {
 export const useDeleteMutation = () => {
     const queryClient = useQueryClient();
     const mutate = useMutation({
-        mutationFn: catalogoDelete,
+        mutationFn: listaDelete,
         onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: ['catalogo']
+                queryKey: ['lista']
             })
         }
     })
@@ -30,10 +30,10 @@ export const useDeleteMutation = () => {
 export const useUpdateMutation = () => {
     const queryClient = useQueryClient();
     const mutate = useMutation({
-        mutationFn: catalogosUpdate,
+        mutationFn: listasUpdate,
         onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: ['catalogo']
+                queryKey: ['lista']
             })
         }
     })

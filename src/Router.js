@@ -8,7 +8,7 @@ export const Router = () => {
         <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/" element={<PageTeste />} />
-            <Route path="/updateCatalogo/:id" element={<Update />} />
+            <Route path="/updateLista/:id" element={<Update />} />
         </Routes>
     );
 };

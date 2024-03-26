@@ -1,6 +1,6 @@
 import '../../App.css';
 import { Loading } from '../../components/Loading/index';
-import { useCatalogo } from '../../utils/query';
+import { useLista } from '../../utils/query';
 import { useAddMutation, useDeleteMutation } from '../../utils/Mutations';
 import { useState } from 'react';
 import { Card } from '../../components/Card/Card';
@@ -8,7 +8,7 @@ import { Header } from '../../components/Header/Header';
 
 export const Home = () => {
     const [nome, setNome] = useState('')
-    const catalogo = useCatalogo();//Mutation de GET
+    const lista = useLista();//Mutation de GET
     const mutateDelete = useDeleteMutation();//Mutation de DELETE
     const mutateAdd = useAddMutation()//Mutation de POST
     const [msgSucess, setMsgSucess] = useState(false);
@@ -69,17 +69,17 @@ export const Home = () => {
                 {validationInput && (<p className='campoVazio'>*Campo obrigatorio! </p>)}
 
             </div>
-            {catalogo.isLoading ?
+            {lista.isLoading ?
 
                 (<Loading />)
                 :
                 (<div>
-                    {catalogo.data.map((item) => (
+                    {lista.data.map((item) => (
                         <Card key={item.id} item={item} OnDelete={() => handleDeleteItem(item.id)} />
                     ))}
                 </div>)
             }
-            {catalogo.isError && <div>"Ops algo deu errado, por favor recarregue a página"</div>}
+            {lista.isError && <div>"Ops algo deu errado, por favor recarregue a página"</div>}
         </div>
     );
 };
