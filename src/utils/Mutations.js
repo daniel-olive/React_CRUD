@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { listaDelete, listasAdd, listasUpdate } from "./api";
+import { listaDelete, listasAdd, updateItem } from "./api";
 
 export const useAddMutation = () => {
     const queryClient = useQueryClient();
@@ -30,7 +30,7 @@ export const useDeleteMutation = () => {
 export const useUpdateMutation = () => {
     const queryClient = useQueryClient();
     const mutate = useMutation({
-        mutationFn: listasUpdate,
+        mutationFn: ({ id, updatedData }) => updateItem(id, updatedData),
         onSuccess: () => {
             queryClient.invalidateQueries({
                 queryKey: ['lista']

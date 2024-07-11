@@ -1,21 +1,13 @@
 
 import { Form } from "../Form/Form";
-import { useNavigate, useParams } from "react-router-dom";
-import { listasUpdate } from "../../utils/api";
+import { useParams } from "react-router-dom";
 
 export const Update = () => {
-    const navigate = useNavigate()
-    const { id } = useParams()
-    const req = listasUpdate()
-
-    const handleUpdate = async (data) => {
-        return await req.putData(id, data),
-        navigate('/home')
-    };
+    const { id } = useParams();
 
     return (
         <div>
-            <Form onAction={handleUpdate} />
+            <Form id={id} />
         </div>
     );
 };
